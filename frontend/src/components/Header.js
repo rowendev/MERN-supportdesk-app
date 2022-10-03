@@ -13,18 +13,14 @@ function Header() {
         <div className="logo">
           <Link to="/">Support Desk</Link>
         </div>
-        <div style={{ display: "flex", gap: ".5rem" }}>
-          <MenuItem>
-            <Link to="/login">
-              <AiOutlineUser size={25} />
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link to="/signup">
-              <FcSupport size={25} />
-            </Link>
-          </MenuItem>
-        </div>
+        <ul>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/signup">SignUp</Link>
+          </li>
+        </ul>
       </header>
     </>
   );
