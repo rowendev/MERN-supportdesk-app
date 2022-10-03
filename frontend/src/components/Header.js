@@ -1,12 +1,20 @@
 import React from "react";
-import { AiOutlineUser } from "react-icons/ai";
-import { FcSupport } from "react-icons/fc";
-import { Link } from "react-router-dom";
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../features/auth/authSlice";
+import { toast } from "react-toastify";
 
 function Header() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+    toast.success("登出成功!");
+  };
   return (
     <>
       <header className="header">
@@ -14,12 +22,22 @@ function Header() {
           <Link to="/">Support Desk</Link>
         </div>
         <ul>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/signup">SignUp</Link>
-          </li>
+          {user ? (
+            <li>
+              <button className="btn" onClick={onLogout}>
+                登出
+              </button>
+            </li>
+          ) : (
+            <>
+              <li>
+                <Link to="/login">登入</Link>
+              </li>
+              <li>
+                <Link to="/signup">註冊</Link>
+              </li>
+            </>
+          )}
         </ul>
       </header>
     </>

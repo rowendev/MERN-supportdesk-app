@@ -36,7 +36,7 @@ function Login() {
   return (
     <>
       <section className="heading">
-        <h4>Login</h4>
+        <h4>登入</h4>
         <h5>Enter your email and password</h5>
       </section>
       <section className="form">
@@ -67,7 +67,7 @@ function Login() {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-block">Submit</button>
+            <button className="btn btn-block">送出</button>
           </div>
         </form>
       </section>

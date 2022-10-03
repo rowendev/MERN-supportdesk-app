@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { register } from "../features/auth/authSlice";
+import { register, reset } from "../features/auth/authSlice";
 
 function Signup() {
   const [fromData, serFormData] = useState({
@@ -14,10 +15,23 @@ function Signup() {
   const { name, email, password, password2 } = fromData;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const { user, isLoading, isSuccess, message } = useSelector(
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    // redirect when logged in
+    if (isSuccess || user) {
+      navigate("/");
+      toast.success("歡迎使用!");
+    }
+    dispatch(reset);
+  }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   const onChange = (e) => {
     serFormData((prevState) => ({
@@ -43,7 +57,7 @@ function Signup() {
   return (
     <>
       <section className="heading">
-        <h4>Sign up</h4>
+        <h4>註冊</h4>
         <h5>Please create an account</h5>
       </section>
       <section className="form">
@@ -97,7 +111,7 @@ function Signup() {
             />
           </div>
           <div className="form-group">
-            <button className="btn btn-block">Submit</button>
+            <button className="btn btn-block">送出</button>
           </div>
         </form>
       </section>
