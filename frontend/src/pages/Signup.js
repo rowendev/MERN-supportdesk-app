@@ -115,8 +115,8 @@ function Signup() {
             <div className="form-group">
               <button className="btn btn-block">送出</button>
             </div>
-            <Link to="/login" style={{ textDecoration: "underline" }}>
-              已經有帳號了? 這邊登入
+            <Link to="/login" className="more">
+              已經有帳號了? 由此登入
             </Link>
           </form>
         </section>

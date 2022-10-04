@@ -15,6 +15,7 @@ function Header() {
     navigate("/");
     toast.success("登出成功!");
   };
+
   return (
     <>
       <header className="header">
@@ -23,11 +24,16 @@ function Header() {
         </div>
         <ul>
           {user ? (
-            <li>
-              <button className="btn" onClick={onLogout}>
-                登出
-              </button>
-            </li>
+            <>
+              <li>
+                <Link to="/profile">我的資料</Link>
+              </li>
+              <li>
+                <button className="btn" onClick={onLogout}>
+                  登出
+                </button>
+              </li>
+            </>
           ) : (
             <>
               <li>
