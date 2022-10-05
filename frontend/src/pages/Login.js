@@ -27,7 +27,6 @@ function Login() {
     // redirect when logged in
     if (isSuccess || user) {
       navigate("/");
-      toast.success("歡迎使用!");
     }
     dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
