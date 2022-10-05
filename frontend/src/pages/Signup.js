@@ -31,7 +31,7 @@ function Signup() {
       navigate("/");
       toast.success("歡迎使用!");
     }
-    dispatch(reset);
+    dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   const onChange = (e) => {

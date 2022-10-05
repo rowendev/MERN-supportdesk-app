@@ -34,6 +34,41 @@ h3 {
   font-weight: 600;
   margin-bottom: 10px;
 }
+h4 {
+  padding: 10px 10px;
+  margin: 0 auto;
+  /* font-family: 'Poppins', sans-serif; */
+  font-weight: 200;
+}
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 3px solid;
+  border-color: #ffb300 transparent #ffb300ca transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .container {
   width: 100%;
@@ -42,13 +77,18 @@ h3 {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 }
 
 .header {
+  width: 100%;
   display: flex;
+  max-width: 960px;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
+  /* height: 15vh; */
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2rem;
   
@@ -93,7 +133,7 @@ footer {
   width: 100%;
   max-width: 960px;
   text-align: center;
-  min-height: 5rem;
+  min-height: 15vh;
   margin: 0rem auto;
   padding: 0 20px;  
 }
@@ -172,7 +212,18 @@ footer > p{
   display: block;
   margin: 0 0 5px 3px;
 }
-
+.item {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item svg {
+  margin-right: .5rem;
+}
 .btn {
   padding: 10px 20px;
   border: 1px solid #000;
@@ -256,7 +307,8 @@ footer > p{
   gap: 20px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: .5rem;
+  /* border-bottom: 1px solid #4c4c4c; */
   background: #f4f4f4;
   padding: 10px 15px;
   border-radius: 5px;
@@ -301,7 +353,7 @@ footer > p{
   text-align: left;
 }
 
-.ticket-page h2 {
+.ticket-page h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -321,9 +373,10 @@ footer > p{
   font-size: 17px;
   background-color: #f4f4f4;
   border: 1px #ccc solid;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   border-radius: 5px;
 }
+
 
 .note {
   border: 1px solid #e6e6e6;
@@ -396,36 +449,8 @@ footer {
   text-align: center;
 }
 
-.loadingSpinnerContainer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 5000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.loadingSpinner {
-  width: 64px;
-  height: 64px;
-  border: 8px solid;
-  border-color: #000 transparent #555 transparent;
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite;
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 @media (max-width: 600px) {
   .boxes {

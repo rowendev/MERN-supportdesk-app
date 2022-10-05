@@ -12,14 +12,21 @@
   "author": "Rowen Lin",
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/react": "^2.3.5",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^7.4.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "express-async-handler": "^1.2.0",
+    "framer-motion": "^6.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.3",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

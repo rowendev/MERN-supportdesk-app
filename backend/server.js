@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/users", require("./routes/userRoute"));
+app.use("/api/tickets", require("./routes/ticketRoute"));
 app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
